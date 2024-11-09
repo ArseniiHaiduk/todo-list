@@ -52,10 +52,14 @@ removeAllTasks.addEventListener("click", () => {
 
 removeDoneTasks.addEventListener("click", () => {
   const doneTasks = document.querySelectorAll(".checked");
-  doneTasks.forEach((task) => {
-    task.remove();
-  });
-  saveData();
+  if (doneTasks.length === 0) {
+    alert("You didn't do anything");
+  } else {
+    doneTasks.forEach((task) => {
+      task.remove();
+    });
+    saveData();
+  }
 });
 
 function saveData() {
