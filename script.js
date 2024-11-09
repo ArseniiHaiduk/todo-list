@@ -46,7 +46,11 @@ listContainer.addEventListener("click", (e) => {
 });
 
 removeAllTasks.addEventListener("click", () => {
-  listContainer.innerHTML = "";
+  if (listContainer.innerHTML === "") {
+    alert("You don't have any tasks");
+  } else {
+    listContainer.innerHTML = "";
+  }
   saveData();
 });
 
